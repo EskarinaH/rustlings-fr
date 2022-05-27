@@ -21,8 +21,8 @@ name = "variables1"
 path = "exercises/variables/variables1.rs"
 mode = "compile"
 hint = """
-Hint: The declaration on line 8 is missing a keyword that is needed in Rust
-to create a new variable binding."""
+Indice : La déclaration ligne 8 est incomplète : il manque un mot-clé
+nécessaire en Rust pour déclarer une nouvelle variable."""
 
 [[exercises]]
 name = "variables2"
