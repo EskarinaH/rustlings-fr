@@ -1,5 +1,5 @@
 // variables3.rs
-// Make me compile! Execute the command `rustlings hint variables3` if you want a hint :)
+// Faites-moi compiler ! Exécutez la commande `rustlings hint variables3` si vous voulez un indice :)
 
 // I AM NOT DONE
 
