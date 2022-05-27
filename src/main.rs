@@ -226,7 +226,7 @@ fn main() {
 
 fn spawn_watch_shell(failed_exercise_hint: &Arc<Mutex<Option<String>>>, should_quit: Arc<AtomicBool>) {
     let failed_exercise_hint = Arc::clone(failed_exercise_hint);
-    println!("Welcome to watch mode! You can type 'help' to get an overview of the commands you can use here.");
+    println!("Bienvenue dans le mode 'watch' ! Tapez 'help' pour avoir un aperçu des commandes que vous pouvez utiliser ici.");
     thread::spawn(move || loop {
         let mut input = String::new();
         match io::stdin().read_line(&mut input) {
@@ -240,21 +240,21 @@ fn spawn_watch_shell(failed_exercise_hint: &Arc<Mutex<Option<String>>>, should_q
                     println!("\x1B[2J\x1B[1;1H");
                 } else if input.eq("quit") {
                     should_quit.store(true, Ordering::SeqCst);
-                    println!("Bye!");
+                    println!("Au revoir !");
                 } else if input.eq("help") {
-                    println!("Commands available to you in watch mode:");
-                    println!("  hint  - prints the current exercise's hint");
-                    println!("  clear - clears the screen");
-                    println!("  quit  - quits watch mode");
-                    println!("  help  - displays this help message");
+                    println!("Commandes disponibles dans le mode 'watch' :");
+                    println!("  hint  - affiche le conseil pour l'exercice courant");
+                    println!("  clear - efface l'écran");
+                    println!("  quit  - quitte le mode watch");
+                    println!("  help  - affiche ce message d'aide");
                     println!();
-                    println!("Watch mode automatically re-evaluates the current exercise");
-                    println!("when you edit a file's contents.")
+                    println!("Le mode watch ré-évalue automatiquement l'exercice courant");
+                    println!("quand vous modifiez le contenu d'un fichier.");
                 } else {
-                    println!("unknown command: {}", input);
+                    println!("commande inconnue : {}", input);
                 }
             }
-            Err(error) => println!("error reading command: {}", error),
+            Err(error) => println!("erreur lors de la lecture de la commande : {}", error),
         }
     });
 }
@@ -262,13 +262,13 @@ fn spawn_watch_shell(failed_exercise_hint: &Arc<Mutex<Option<String>>>, should_q
 fn find_exercise<'a>(name: &str, exercises: &'a [Exercise]) -> &'a Exercise {
     if name.eq("next") {
         exercises.iter().find(|e| !e.looks_done()).unwrap_or_else(|| {
-            println!("🎉 Congratulations! You have done all the exercises!");
-            println!("🔚 There are no more exercises to do next!");
+            println!("🎉 Bravo ! Vous avez fait tous les exercices !");
+            println!("🔚 Il n'y a pas d'autres exercices !");
             std::process::exit(1)
         })
     } else {
         exercises.iter().find(|e| e.name == name).unwrap_or_else(|| {
-            println!("No exercise found for '{}'!", name);
+            println!("Aucun exercice trouvé avec le nom '{}' !", name);
             std::process::exit(1)
         })
     }
