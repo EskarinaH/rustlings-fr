@@ -1,194 +1,189 @@
 # rustlings 🦀❤️
 
-Greetings and welcome to `rustlings`. This project contains small exercises to get you used to reading and writing Rust code. This includes reading and responding to compiler messages!
+Salutations et bienvenue sur le projet `rustlings` ! Il contient de petits exercices pour s'habituer à lire et écrire du code en Rust. Cela comprend le fait de lire les messages du compilateur et d'y répondre !
 
-_...looking for the old, web-based version of Rustlings? Try [here](https://github.com/rust-lang/rustlings/tree/rustlings-1)_
+_...à la recherche de l'ancienne version de Rustlings, sous forme d'appli web ? Essayez [ici](https://github.com/rust-lang/rustlings/tree/rustlings-1)_
 
-Alternatively, for a first-time Rust learner, there are several other resources:
+Alternativement, pour les personnes qui débutent en Rust, il y a plusieurs autres ressources :
 
-- [The Book](https://doc.rust-lang.org/book/index.html) - The most comprehensive resource for learning Rust, but a bit theoretical sometimes. You will be using this along with Rustlings!
-- [Rust By Example](https://doc.rust-lang.org/rust-by-example/index.html) - Learn Rust by solving little exercises! It's almost like `rustlings`, but online
+- [The Book](https://doc.rust-lang.org/book/index.html) (en anglais) ou sa [traduction](https://jimskapt.github.io/rust-book-fr/) non officielle en français) - La ressource la plus complète pour apprendre Rust, mais parfois un peu théorique. Vous l'utiliserez en parallèle de Rustlings !
+- [Rust By Example](https://doc.rust-lang.org/rust-by-example/index.html) (en anglais) - Apprenez Rust en résolvant de petits exercices ! C'est presque comme `rustlings`, mais en ligne.
 
-## Getting Started
+## Pour commencer
 
-_Note: If you're on MacOS, make sure you've installed Xcode and its developer tools by typing `xcode-select --install`._
-_Note: If you're on Linux, make sure you've installed gcc. Deb: `sudo apt install gcc`. Yum: `sudo yum -y install gcc`._
+_Note : Sur MacOS, assurez-vous d'avoir installé Xcode et ses "developer tools" avec cette commande : `xcode-select --install`._
+_Note : Sur Linux, assurez-vous d'avoir installé gcc. Deb : `sudo apt install gcc`. Yum : `sudo yum -y install gcc`._
 
-You will need to have Rust installed. You can get it by visiting https://rustup.rs. This'll also install Cargo, Rust's package/project manager.
+Vous aurez besoin d'avoir installé Rust. Vous pouvez l'obtenir sur la page https://rustup.rs. Cela installera aussi Cargo, le gestionnaire de paquets et de projets de Rust.
 
 ## MacOS/Linux
 
-Just run:
+Executez les lignes suivantes :
 
 ```bash
-curl -L https://raw.githubusercontent.com/rust-lang/rustlings/main/install.sh | bash
-# Or if you want it to be installed to a different path:
-curl -L https://raw.githubusercontent.com/rust-lang/rustlings/main/install.sh | bash -s mypath/
+curl -L https://raw.githubusercontent.com/EskarinaH/rustlings-fr/main/install.sh | bash
+# Ou si vous voulez l'installer dans un autre répertoire :
+curl -L https://raw.githubusercontent.com/EskarinaH/rustlings-fr/main/install.sh | bash -s mypath/
 ```
 
-This will install Rustlings and give you access to the `rustlings` command. Run it to get started!
+Cela va installer Rustlings et vous donner accès à la commande `rustlings`. Exécutez-là pour commencer !
 
 ## Windows
 
-In PowerShell (Run as Administrator), set `ExecutionPolicy` to `RemoteSigned`:
+Dans PowerShell (exécuté en tant qu'administrateur), mettre `ExecutionPolicy` à `RemoteSigned` :
 
 ```ps1
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-Then, you can run:
+Ensuite, installer Rustlings :
 
 ```ps1
-Start-BitsTransfer -Source https://raw.githubusercontent.com/rust-lang/rustlings/main/install.ps1 -Destination $env:TMP/install_rustlings.ps1; Unblock-File $env:TMP/install_rustlings.ps1; Invoke-Expression $env:TMP/install_rustlings.ps1
+Start-BitsTransfer -Source https://raw.githubusercontent.com/EskarinaH/rustlings-fr/main/install.ps1 -Destination $env:TMP/install_rustlings.ps1; Unblock-File $env:TMP/install_rustlings.ps1; Invoke-Expression $env:TMP/install_rustlings.ps1
 ```
 
-To install Rustlings. Same as on MacOS/Linux, you will have access to the `rustlings` command after it.
+Comme pour MacOS/Linux, vous aurez ensuite accès à la commande `rustlings`.
 
-When you get a permission denied message then you have to exclude the directory where you placed the rustlings in your virus-scanner
+Si vous obtenez le message "permission denied", vous devez configurer votre anti-virus pour exclure le répertoire où vous avez placé rustlings.
 
-## Browser:
+## Navigateur :
 
-[Run on Repl.it](https://repl.it/github/rust-lang/rustlings)
+[Sur Repl.it](https://replit.com/github/EskarinaH/rustlings-fr)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rust-lang/rustlings)
+[![Ouvrir dans Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/EskarinaH/rustlings-fr)
 
-## Manually
+## Installation manuelle
 
-Basically: Clone the repository at the latest tag, run `cargo install`.
+Clonez le dépôt au niveau du dernier tag, puis exécutez `cargo install`. 
 
 ```bash
-# find out the latest version at https://github.com/rust-lang/rustlings/releases/latest (on edit 4.7.1)
-git clone -b 4.7.1 --depth 1 https://github.com/rust-lang/rustlings
-cd rustlings
+# Trouvez la dernière version sur https://github.com/EskarinaH/rustlings-fr/latest (4.7.1 au moment de l'édition de ce README.) 
+git clone -b 4.7.1 --depth 1 https://github.com/EskarinaH/rustlings-fr
+cd rustlings-fr
 cargo install --force --path .
 ```
 
-If there are installation errors, ensure that your toolchain is up to date. For the latest, run:
+S'il y a des erreurs lors de l'installation, assurez-vous que votre toolchain est à jour. Pour cela, exécutez :
 
 ```bash
 rustup update
 ```
 
-Then, same as above, run `rustlings` to get started.
+Ensuite, comme plus haut, exécutez `rustlings` pour commencer.
 
-## Doing exercises
+## Faire les exercices
 
-The exercises are sorted by topic and can be found in the subdirectory `rustlings/exercises/<topic>`. For every topic there is an additional README file with some resources to get you started on the topic. We really recommend that you have a look at them before you start.
+Les exercices sont triés par sujet et se trouvent dans le sous-dossier `rustlings/exercises/<sujet>`. Pour chaque sujet il y a un fichier README ("lisez-moi") supplémentaire avec des ressources pour démarrer sur le sujet. Nous recommandons vivement d'y jeter un œil avant de commencer.
 
-The task is simple. Most exercises contain an error that keeps them from compiling, and it's up to you to fix it! Some exercises are also run as tests, but rustlings handles them all the same. To run the exercises in the recommended order, execute:
+Le principe est simple. La plupart des exercices contiennent une erreur qui les empêche de compiler, et c'est à vous de la réparer ! Certains exercices sont aussi exécutés comme des tests, mais rustlings les traite de la même façon. Pour faire les exercices dans l'ordre recommandé, exécutez :
 
 ```bash
 rustlings watch
 ```
 
-This will try to verify the completion of every exercise in a predetermined order (what we think is best for newcomers). It will also rerun automatically every time you change a file in the `exercises/` directory. If you want to only run it once, you can use:
+Cela va essayer de vérifier la résolution de chaque exercice dans un ordre prédéterminé (que nous pensons être le meilleur pour découvrir Rust.) Cela va aussi se ré-exécuter à chaque fois que vous changez un fichier dans le dossier `exercises/`. Si vous voulez l'exécuter une seule fois, vous pouvez utiliser :
 
 ```bash
 rustlings verify
 ```
 
-This will do the same as watch, but it'll quit after running.
+Cela va faire la même chose que `watch`, mais s'arrêter après une exécution.
 
-In case you want to go by your own order, or want to only verify a single exercise, you can run:
+Si vous voulez y aller dans un ordre de votre choix, ou si vous voulez vérifier un seul exercice, vous pouvez exécuter :
 
 ```bash
 rustlings run myExercise1
 ```
 
-Or simply use the following command to run the next unsolved exercise in the course:
+Ou simplement utiliser la commande suivante pour exécuter le prochain exercice non résolu :
 
 ```bash
 rustlings run next
 ```
 
-In case you get stuck, you can run the following command to get a hint for your
-exercise:
+Si vous bloquez sur un exercice, vous pouvez exécuter la commande suivante pour obtenir un indice :
 
 ```bash
 rustlings hint myExercise1
 ```
 
-You can also get the hint for the next unsolved exercise with the following command:
+Vous pouvez aussi obtenir l'indice pour le prochain exercice non résolu avec la commande suivante :
 
 ```bash
 rustlings hint next
 ```
 
-To check your progress, you can run the following command:
+Pour vérifier votre progression, vous pouvez exécuter la commande suivante :
 
 ```bash
 rustlings list
 ```
 
-## Testing yourself
+## Tester ses connaissances
 
-After every couple of sections, there will be a quiz that'll test your knowledge on a bunch of sections at once. These quizzes are found in `exercises/quizN.rs`.
+Toutes les 2 ou 3 sections, `rustlings` vous propose un quiz pour tester vos connaissances sur plusieurs sections d'un coup. Ces quiz se trouvent dans `exercises/quizN.rs`.
 
-## Enabling `rust-analyzer`
+## Activer `rust-analyzer`
 
-`rust-analyzer` support is provided, but it depends on your editor
-whether it's enabled by default. (RLS support is not provided)
+`rust-analyzer` est supporté, mais la question de savoir s'il est activé par défaut dépend de votre éditeur. (RLS n'est pas supporté.)
 
-To enable `rust-analyzer`, you'll need to make Cargo build the project
-with the `exercises` feature, which will automatically include the `exercises/`
-subfolder in the project. The easiest way to do this is to tell your editor to
-build the project with all features (the equivalent of `cargo build --all-features`).
-For specific editor instructions:
+Pour activer `rust-analyzer`, vous devrez dire à Cargo de compiler le projet avec la fonctionnalité `exercises`, ce qui inclura automatiquement le sous-dossier `exercises/` dans le projet. La façon la plus simple de faire cela est de dire à votre éditeur de compiler le projet avec toutes les fonctionnalités (l'équivalent de `cargo build --all-features`).
+Voici les instructions spécifiques par éditeur :
 
-- **VSCode**: Add a `.vscode/settings.json` file with the following:
+- **VSCode**: Ajouter un fichier `.vscode/settings.json` avec la ligne suivante :
 ```json
 {
     "rust-analyzer.cargo.features": ["exercises"]
 }
 ```
-- **IntelliJ-based Editors**: Using the Rust plugin, everything should work
-    by default.
-- _Missing your editor? Feel free to contribute more instructions!_
+- **IntelliJ-based Editors**: Avec le plugin Rust, tout devrait fonctionner par défaut.
 
-## Continuing On
+- _Votre éditeur manque à l'appel ? N'hésitez pas à contribuer pour ajouter des instructions !_
 
-Once you've completed Rustlings, put your new knowledge to good use! Continue practicing your Rust skills by building your own projects, contributing to Rustlings, or finding other open-source projects to contribute to.
+## Pour continuer
 
-## Uninstalling Rustlings
+Une fois que vous avez complété Rustlings, faites bon usage de vos nouvelles connaissances ! Continuez à vous exercer en Rust en créant vos propres projets, en contribuant à Rustlings, ou en trouvant d'autres projets Open-Source auxquels contribuer.
 
-If you want to remove Rustlings from your system, there's two steps. First, you'll need to remove the exercises folder that the install script created
-for you:
+## Désinstaller Rustlings
+
+Si vous voulez désinstaller Rustlings, il y a deux étapes. D'abord, retirez le dossier `exercises/` que le script d'installation a créé pour vous :
 
 ```bash
-rm -rf rustlings # or your custom folder name, if you chose and or renamed it
+rm -rf rustlings # ou le nom personnalisé de votre dossier, si vous avez choisi de le renommer.
 ```
 
-Second, since Rustlings got installed via `cargo install`, it's only reasonable to assume that you can also remove it using Cargo, and
-exactly that is the case. Run `cargo uninstall` to remove the `rustlings` binary:
+Ensuite, comme Rustlings a été installé via `cargo install`, il est tout à fait raisonnable de partir du principe que vous pouvez aussi le supprimer en utilisant Cargo, et c'est le cas. Exécutez `cargo uninstall` pour retirer le binaire `rustlings` :
 
 ```bash
 cargo uninstall rustlings
 ```
 
-Now you should be done!
+C'est bon !
 
-## Completion
+## Pour compléter
 
-Rustlings isn't done; there are a couple of sections that are very experimental and don't have proper documentation. These include:
+Rustlings n'est pas terminé ; plusieurs sections sont très expérimentales et n'ont pas de vraie documentation. Cela concerne entre autres :
 
 - Errors (`exercises/errors/`)
 - Option (`exercises/option/`)
 - Result (`exercises/result/`)
-- Move Semantics (could still be improved, `exercises/move_semantics/`)
+- Move Semantics (pourrait encore être améliorée, `exercises/move_semantics/`)
 
-Additionally, we could use exercises on a couple of topics:
+De plus, des exercices sur certains sujets supplémentaires seraient utiles :
 
 - Structs
-- Better ownership stuff
+- Des meilleurs exercices sur la possession (ownership)
 - `impl`
-- ??? probably more
+- ??? probablement d'autres sujets
 
-If you are interested in improving or adding new ones, please feel free to contribute! Read on for more information :)
+Si cela vous intéresse d'améliorer ou d'ajouter des exercices, n'hésitez pas à contribuer ! (De préférence sur le [site d'origine en anglais](https://github.com/rust-lang/rustlings). Lisez la suite pour plus d'informations :)
 
-## Contributing
+Si vous souhaitez compléter ou améliorer cette traduction, n'hésitez pas à ouvrir une issue ou une pull request sur ce dépôt :)
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md).
+## Contribuer
 
-## Contributors ✨
+Cf. [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-Thanks goes to the wonderful people listed in [AUTHORS.md](./AUTHORS.md) 🎉
+## Contributeurs ✨
+
+Merci à tous les gens merveilleux listés dans [AUTHORS.md](./AUTHORS.md) 🎉
