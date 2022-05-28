@@ -1,8 +1,8 @@
 // intro1.rs
 // Au sujet des commentaires `I AM NOT DONE` :
 // Nous vous encourageons parfois à continuer à tester des choses sur un exercice
-// donné, même après que vous l'ayez résolu. Si tout fonctionne et que vous sentez
-// qu'il est temps de passer à l'exercice suivant, supprimez le commentaire
+// donné, même après que vous l’ayez résolu. Si tout fonctionne et que vous sentez
+// qu’il est temps de passer à l'exercice suivant, supprimez le commentaire
 // `I AM NOT DONE` ci-dessous (littéralement "JE N'AI PAS FINI").
 // Exécutez `rustlings hint intro1` pour avoir un conseil.
 
