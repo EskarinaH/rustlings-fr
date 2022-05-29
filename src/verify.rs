@@ -179,9 +179,9 @@ fn prompt_for_completion(exercise: &Exercise, prompt_output: Option<String>) -> 
         println!();
     }
 
-    println!("You can keep working on this exercise,");
+    println!("Vous pouvez continuer à travailler sur cet exercice,");
     println!(
-        "or jump into the next one by removing the {} comment:",
+        "ou passer au suivant en supprimant le commentaire {} :",
         style("`I AM NOT DONE`").bold()
     );
     println!();
