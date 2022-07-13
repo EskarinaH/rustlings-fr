@@ -1,9 +1,11 @@
 # Variables
 
-In Rust, variables are immutable by default.
-When a variable is immutable, once a value is bound to a name, you can’t change that value.
-You can make them mutable by adding mut in front of the variable name.
+En Rust, les variables sont immuables par défaut.
+Quand une variable est immuable, une fois qu'une variable est liée à un nom, on ne peut
+pas changer sa valeur.
+On peut rendre une variable mutable en ajoutant "mut" devant le nom de la variable.
 
-## Further information
+## Pour plus d’information
 
-- [Variables and Mutability](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html)
+- [Les variables et la mutabilité](https://jimskapt.github.io/rust-book-fr/ch03-01-variables-and-mutability.html)
+- [Variables and Mutability](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html) (en anglais)
