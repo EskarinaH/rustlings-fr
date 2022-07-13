@@ -1,6 +1,7 @@
 // intro2.rs
-// Make the code print a greeting to the world.
-// Execute `rustlings hint intro2` for a hint.
+// Faites en sorte que ce code affiche une salutation
+// au monde.
+// Exécutez `rustlings hint intro2` pour obtenir un indice.
 
 // I AM NOT DONE
 
